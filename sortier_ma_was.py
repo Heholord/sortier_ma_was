@@ -12,13 +12,17 @@ movie_list= sorted(listdir(movie_folder))
 for movie_index, movie_titel in enumerate(movie_list):
     movie_path = os.path.join(movie_folder, movie_titel)
     movie_sub_folder = listdir(movie_path)
+    folder_size = os.stat(movie_path)
+    print("\n", movie_index, movie_titel, "[","Number of Files:", len(movie_sub_folder),"Size:",folder_size.st_size, "]")
+
     
-    print("\n", movie_index, movie_titel, "[","Number of Files:", len(movie_sub_folder),"]")
 
     for index_sub, subfolder_index in enumerate(movie_sub_folder):
+        # size=os.path.getsize(subfolder_index)
         print("\t -", index_sub +1, subfolder_index)
 
-
+size=os.path.getsize(movie_folder)
+print(size)
 
 # IDEE FÜR COUNT
 # def count(dir, counter=0):
