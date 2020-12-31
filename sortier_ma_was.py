@@ -38,6 +38,13 @@ for movie_index, movie_titel in enumerate(movie_list):
                 file_ending = file_name[file_ending_index:]
             # print("\t -", index_sub +1, file_name, " ")
 
+    recommended_deletion = any(ele in file_ending for ele in file_endings_to_be_deleted)
+    # print(file_name,"[", recommended_deletion, "]")
+
+    # if recommendended_deletion == true:
+    #     os.remove(os.path.join(movie_path, file_name))
+
+
 size=os.path.getsize(root_movie_folder)
 print(size)
 
