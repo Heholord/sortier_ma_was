@@ -13,6 +13,8 @@ movie_list= sorted(listdir(root_movie_folder))
 simulation = True
 #TODO 
 # simulation fuer wenn file endung dann (move/delete -> kommentieren) 
+# simulations mode ein bauen
+# funktion direkt bei dem file einbauen (sonst indexierungs fehler!)
 
 file_endings_to_be_deleted = [ '.jpg', '.nfo', '.txt', '.gz', '.png', '.YIFY', '.rar', '.idx', '.lnk', '.tbn']
 
@@ -36,12 +38,14 @@ for movie_index, movie_titel in enumerate(movie_list):
                 print("\t File ending non existant", file_name)
             else: 
                 file_ending = file_name[file_ending_index:]
+                if file_ending in file_endings_to_be_deleted:
+                    print(file_name, "[to be deleted]")
             # print("\t -", index_sub +1, file_name, " ")
-
-    recommended_deletion = any(ele in file_ending for ele in file_endings_to_be_deleted)
+    # file_ending = []
+    # recommended_deletion = any(ele in file_ending for ele in file_endings_to_be_deleted)
     # print(file_name,"[", recommended_deletion, "]")
 
-    # if recommendended_deletion == true:
+    # if recommendended_deletion:
     #     os.remove(os.path.join(movie_path, file_name))
 
 
